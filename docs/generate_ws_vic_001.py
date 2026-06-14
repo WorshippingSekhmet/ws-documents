@@ -13,6 +13,7 @@ from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+import os
 
 # Register fonts
 pdfmetrics.registerFont(TTFont('DejaVuSerif', '/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'))
@@ -95,7 +96,8 @@ def create_styles():
 
 
 def build_pdf():
-    output_path = "/home/workdir/artifacts/WS_ViC_001_Immutable_Core_Principles.pdf"
+    os.makedirs("artifacts", exist_ok=True)
+    output_path = "artifacts/WS_ViC_001_Immutable_Core_Principles.pdf"
 
     doc = SimpleDocTemplate(
         output_path,
