@@ -17,7 +17,6 @@ from reportlab.pdfbase.ttfonts import TTFont
 # Register fonts
 pdfmetrics.registerFont(TTFont('DejaVuSerif', '/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'))
 pdfmetrics.registerFont(TTFont('DejaVuSerif-Bold', '/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf'))
-pdfmetrics.registerFont(TTFont('DejaVuSerif-BoldItalic', '/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf'))
 
 # Colors
 GOLD = HexColor('#D4AF37')
@@ -85,7 +84,7 @@ def create_styles():
 
     styles.add(ParagraphStyle(
         name='EndMarker',
-        fontName='DejaVuSerif-BoldItalic',
+        fontName='DejaVuSerif-Bold',
         fontSize=9,
         textColor=GOLD,
         alignment=TA_CENTER,
