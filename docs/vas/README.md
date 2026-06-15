@@ -19,7 +19,7 @@ Previous template versions that were released for specific audits are stored in 
 ## Normative Basis
 
 - [WS-ViC-001 (Immutable Core Principles)](../policy/WS-ViC-001.md)
-- [WS-Framework-Charter](../charter/WS-Framework-Charter.md)
+- [WS-Framework-Charter](../charter/WS-Framework-Charter_v1.0.pdf)
 - [VAS v8.7 (PDF)](../../VAS_v8.7_Final_14June2026_BlackWhiteGold.pdf)
 
 ---
