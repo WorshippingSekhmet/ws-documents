@@ -4,9 +4,9 @@ This folder contains all normative and supporting documents for the **Valkyrie A
 
 ## Active Template File (for WLK ADT Interfaces)
 
-The currently valid version of the **VAS ADT Companion Template** is available at the following link:
+The currently valid version of the **VAS ADT Companion Template** is available here:
 
-➡️ **[Active VAS ADT Companion Template (v8.7)](https://github.com/ws-documents/blob/main/docs/vas/templates/vas_adt_companion_template_wlk_adt.md)**
+➡️ **[Active VAS ADT Companion Template (v8.7)](./templates/vas_adt_companion_template_wlk_adt.md)**
 
 This file is maintained in **Markdown format** and is the authoritative source.  
 If needed, it can be converted to `.docx` or `.pdf` using `pandoc`.
