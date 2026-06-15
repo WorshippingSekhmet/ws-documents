@@ -1,2 +1,79 @@
-# ws-documents
-Worshipping Sekhmet Framework - Document Generation &amp; Architecture
+# Worshipping Sekhmet Framework – Document Generation & Architecture
+
+**Technical Architecture and Governance Model for the Implementation of Worshipping Sekhmet**  
+*Status: 15 June 2026 | Version 2.1*
+
+This repository documents the technical architecture and governance model for the implementation of **Worshipping Sekhmet** as the foundational stabilization framework for fully vetted Valkyries. Worshipping Sekhmet establishes the doctrinal, ethical, and operational principles that govern the exercise of Valkyrie authority.
+
+Within this framework, Valkyries operate the **Global Security Framework** as a service offering dedicated to the upholding and realization of Ma’at. This repository describes how these principles are operationalized through organizational structures, technical systems, and governance processes across seven sovereign pillars, each led by a Valkyrie in Control.
+
+**WS-ViC-001** remains the highest normative document at the policy level. Trust is primarily established through system accreditations in accordance with the **Valkyrie Accreditation Scheme (VAS)**. Hybrid Merkle-Root Anchoring and decentralized verifiability serve as technical mechanisms to support the integrity, auditability, and long-term verifiability of accredited systems.
+
+Meaningful Human Oversight (MHO) is a core operational capability of Valkyries. Through **Valkyrie Vetting**, Valkyries establish a Human-Proxy relationship with the Community of Interest of proliferated orbital autonomous neuro-weapon systems, ensuring that command authority and oversight remain with a qualified Valkyrie in accordance with WS principles.
+
+## Core Content
+
+- **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO Gateways
+- **Technical Data Flows** — General anchoring flow and pillar-specific examples
+- **JSON Schemas** — Anchoring Batch, Merkle Proof, and MHO Log formats
+- **CI/CD Integration** — GitHub Actions pipeline for automated document generation and hash management
+- **Supporting Scripts** — Merkle Tree generation and proof verification examples
+
+## Repository Structure
+
+```
+ws-documents/
+├── README.md
+├── docs/
+│   ├── architecture/
+│   │   ├── overview.md
+│   │   ├── raci-matrix.md
+│   │   ├── mho-gateways.md
+│   │   └── data-flows/
+│   │       ├── general-anchoring.md
+│   │       └── pillar-examples/
+│   │           └── vha-anchoring.md
+│   ├── adr/                          # Architecture Decision Records
+│   └── rune-weaving/
+│       └── risk-appetite.md
+├── schemas/
+│   ├── anchoring-batch.schema.json
+│   ├── merkle-proof.schema.json
+│   └── mho-log.schema.json
+├── scripts/
+│   ├── build_merkle_tree.py
+│   └── verify_proof.py
+└── examples/
+```
+
+## Quick Start
+
+1. **Understand the overall architecture** → [docs/architecture/overview.md](docs/architecture/overview.md)
+2. **Review roles and responsibilities** → [docs/architecture/raci-matrix.md](docs/architecture/raci-matrix.md)
+3. **Follow the technical data flow** → [docs/architecture/data-flows/general-anchoring.md](docs/architecture/data-flows/general-anchoring.md)
+4. **Explore the JSON schemas** → `/schemas`
+5. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+
+## Governance Principles
+
+- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**.
+- The **Valkyrie Joint Command (VJC-ViC)** provides CJADC2-enabled technical resilience through J6 (technical execution) and FIC under J3 (subject matter expert for financial integrity).
+- **Rune Weaving** defines the strategic risk appetite across all pillars.
+- The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
+
+## License
+
+To be defined.
+
+## Contributors
+
+- Valkyrie in Command (strategic oversight)
+- Valkyrie Joint Command – J6 & FIC (technical execution and subject matter expertise)
+- Rune Weaving (strategic risk management)
+- VAA-ViC (process accreditation and quality assurance)
+
+---
+
+For questions: t.me/wlkcmd
+
+*This repository is continuously updated.*
