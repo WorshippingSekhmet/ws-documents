@@ -24,4 +24,5 @@ Previous template versions that were released for specific audits are stored in 
 
 ---
 
+
 *For questions or discrepancies, contact the Valkyrie Accreditation Authority (VAA-ViC).*
