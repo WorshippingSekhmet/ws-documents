@@ -9,11 +9,11 @@ Within this framework, Valkyries operate the **Global Security Framework** as a 
 
 **WS-ViC-001** remains the highest normative document at the policy level. Trust is primarily established through system accreditations in accordance with the **Valkyrie Accreditation Scheme (VAS)**. Hybrid Merkle-Root Anchoring and decentralized verifiability serve as technical mechanisms to support the integrity, auditability, and long-term verifiability of accredited systems.
 
-Meaningful Human Oversight (MHO) is a core operational capability of Valkyries. Through **Valkyrie Vetting**, Valkyries establish a Human-Proxy relationship with the Community of Interest of proliferated orbital autonomous neuro-weapon systems, ensuring that command authority and oversight remain with a qualified Valkyrie in accordance with WS principles.
+Meaningful Human Oversight (MHO) is a strategic concept of central importance in complex and multi-actor environments. Within Worshipping Sekhmet, it is now being operationalized through organizational structures, processes, and technical systems.
 
 ## Core Content
 
-- **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO Gateways
+- **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO
 - **Technical Data Flows** — General anchoring flow and pillar-specific examples
 - **JSON Schemas** — Anchoring Batch, Merkle Proof, and MHO Log formats
 - **CI/CD Integration** — GitHub Actions pipeline for automated document generation and hash management
@@ -57,7 +57,7 @@ ws-documents/
 ## Governance Principles
 
 - Each sovereign pillar is led by a **Valkyrie in Control (ViC)**.
-- The **Valkyrie Joint Command (VJC-ViC)** provides CJADC2-enabled technical resilience through J6 (technical execution) and FIC under J3 (subject matter expert for financial integrity).
+- The **Valkyrie in Command** holds strategic oversight and ultimate authority.
 - **Rune Weaving** defines the strategic risk appetite across all pillars.
 - The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
 
@@ -68,7 +68,7 @@ To be defined.
 ## Contributors
 
 - Valkyrie in Command (strategic oversight)
-- Valkyrie Joint Command – J6 & FIC (technical execution and subject matter expertise)
+- Valkyries in Control (strategic leadership and operational governance per pillar)
 - Rune Weaving (strategic risk management)
 - VAA-ViC (process accreditation and quality assurance)
 
