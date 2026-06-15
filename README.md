@@ -18,6 +18,7 @@ Meaningful Human Oversight (MHO) is a strategic concept of central importance in
 - **JSON Schemas** — Anchoring Batch, Merkle Proof, and MHO Log formats
 - **CI/CD Integration** — GitHub Actions pipeline for automated document generation and hash management
 - **Supporting Scripts** — Merkle Tree generation and proof verification examples
+- **VAS Templates** — Official templates for the Valkyrie Accreditation Scheme (see [VAS Overview](docs/vas/README.md))
 
 ## Repository Structure
 
@@ -33,6 +34,10 @@ ws-documents/
 │   │       ├── general-anchoring.md
 │   │       └── pillar-examples/
 │   │           └── vha-anchoring.md
+│   ├── vas/
+│   │   ├── README.md                 # VAS Templates Overview
+│   │   └── templates/
+│   │       └── archive/
 │   ├── adr/                          # Architecture Decision Records
 │   └── rune-weaving/
 │       └── risk-appetite.md
@@ -41,8 +46,9 @@ ws-documents/
 │   ├── merkle-proof.schema.json
 │   └── mho-log.schema.json
 ├── scripts/
-│   ├── build_merkle_tree.py
-│   └── verify_proof.py
+│   ├── archive_template.sh
+│   └── build_merkle_tree.py
+└── verify_proof.py
 └── examples/
 ```
 
@@ -52,12 +58,15 @@ ws-documents/
 2. **Review roles and responsibilities** → [docs/architecture/raci-matrix.md](docs/architecture/raci-matrix.md)
 3. **Follow the technical data flow** → [docs/architecture/data-flows/general-anchoring.md](docs/architecture/data-flows/general-anchoring.md)
 4. **Explore the JSON schemas** → `/schemas`
-5. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
+6. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
 
 ## Governance Principles
 
-- The **Valkyrie in Command** holds strategic oversight and ultimate authority.
-- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**.
+- The **Valkyrie in Command** holds strategic oversight and ultimate authority over the entire framework.
+- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**, who is responsible for strategic leadership, operational governance, and Meaningful Human Oversight within their respective pillar.
+- **Rune Weaving** defines the strategic risk appetite across all pillars.
+- The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
 
 ## License
 
