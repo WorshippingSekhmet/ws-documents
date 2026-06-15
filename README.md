@@ -56,10 +56,8 @@ ws-documents/
 
 ## Governance Principles
 
-- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**.
 - The **Valkyrie in Command** holds strategic oversight and ultimate authority.
-- **Rune Weaving** defines the strategic risk appetite across all pillars.
-- The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
+- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**.
 
 ## License
 
