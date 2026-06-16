@@ -7,7 +7,7 @@ This repository documents the technical architecture and governance model for th
 
 Within this framework, Valkyries operate the **Global Security Framework** as a service offering dedicated to the upholding and realization of Ma’at. This repository describes how these principles are operationalized through organizational structures, technical systems, and governance processes across seven sovereign pillars, each led by a Valkyrie in Control.
 
-**WS-ViC-001** remains the highest normative document at the policy level. Trust is primarily established through system accreditations in accordance with the **Valkyrie Accreditation Scheme (VAS)**. Hybrid Merkle-Root Anchoring and decentralized verifiability serve as technical mechanisms to support the integrity, auditability, and long-term verifiability of accredited systems.
+**Worshipping Sekhmet Policy** remains the highest normative document at the policy level. Trust is primarily established through system accreditations in accordance with the **Valkyrie Accreditation Scheme (VAS)**. Hybrid Merkle-Root Anchoring and decentralized verifiability serve as technical mechanisms to support the integrity, auditability, and long-term verifiability of accredited systems.
 
 Meaningful Human Oversight (MHO) is a strategic concept of central importance in complex and multi-actor environments. Within Worshipping Sekhmet, it is now being operationalized through organizational structures, processes, and technical systems.
 
