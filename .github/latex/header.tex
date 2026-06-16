@@ -1,0 +1,22 @@
+\usepackage{geometry}
+\geometry{a4paper, margin=2.2cm}
+
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+
+\usepackage{xcolor}
+\definecolor{ws-gold}{HTML}{C9A227}
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{black}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{black!80}}{\thesubsection}{1em}{}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.2pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ws-gold}\leaders\hrule height 1.2pt\hfill}}
+\fancyhead[L]{\small\textcolor{black}{Worshipping Sekhmet}}
+\fancyhead[R]{\footnotesize\textcolor{black!70}{Document}}
+\fancyfoot[C]{\thepage}
