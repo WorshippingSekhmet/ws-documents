@@ -1,0 +1,58 @@
+name: Generate PDFs (Frontmatter Auto-Discovery)
+
+on:
+  push:
+    paths:
+      - 'docs/**/*.md'
+      - '*.md'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Pandoc + LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
+      - name: Generate PDFs from Frontmatter
+        id: generator
+        run: |
+          commit_list=""
+          find docs/ -name "*.md" -type f | while read -r file; do
+            if grep -q '^export:' "$file" && grep -q 'pdf: true' "$file"; then
+              echo "📄 Processing: $file"
+
+              output_name=$(grep -A 10 '^export:' "$file" | grep 'output:' | head -1 | sed 's/.*output: "\(.*\)"/\1/' || echo "$(basename "$file" .md).pdf")
+              commit_pdf=$(grep -A 10 '^export:' "$file" | grep 'commit:' | head -1 | grep -q 'true' && echo "true" || echo "false")
+
+              relative_dir=$(dirname "$file" | sed 's|^docs/||')
+              mkdir -p "artifacts/pdf/$relative_dir"
+
+              pandoc "$file" \
+                -o "artifacts/pdf/$relative_dir/$output_name" \
+                --pdf-engine=xelatex \
+                --include-in-header=.github/latex/header.tex \
+                --metadata-file=config/pandoc-defaults.yaml || true
+
+              if [ "$commit_pdf" = "true" ]; then
+                echo "✅ Will commit: artifacts/pdf/$relative_dir/$output_name"
+                export commit_list="${commit_list} artifacts/pdf/$relative_dir/$output_name"
+                echo "commit_list=${commit_list}" >> $GITHUB_ENV
+              fi
+            fi
+          done
+
+      - name: Commit PDFs (if any)
+        if: env.commit_list != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ env.commit_list }}
+          git commit -m "chore: auto-generate PDFs [skip ci]" || echo "Nothing to commit"
+          git push
