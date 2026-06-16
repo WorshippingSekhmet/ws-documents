@@ -80,10 +80,6 @@ ws-documents/
 - **Rune Weaving** defines the strategic risk appetite across all pillars.
 - The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
 
-## License
-
-To be defined.
-
 ## Contributors
 
 - Valkyrie in Command (strategic oversight)
