@@ -11,6 +11,15 @@ This public summary provides an overview of the governance principles. The full 
 - **Approval Process**: Content intended for broader release requires appropriate oversight and approval, including Meaningful Human Oversight (MHO) where required.
 - **Traceability**: Released versions of templates and key documents are archived and tagged for long-term accountability.
 
+## License
+
+All content in this repository is licensed under **CC BY-NC-ND 4.0** unless otherwise noted.
+
+- You may share and redistribute the material freely.
+- You must give appropriate credit to Worshipping Sekhmet.
+- You may **not** use the material for commercial purposes.
+- You may **not** create derivative works.
+
 ## Standards Alignment
 
 This governance framework supports the requirements of:
