@@ -7,6 +7,10 @@ on:
       - '*.md'
   workflow_dispatch:
 
+# 🔑 WICHTIG: Schreibrechte für den Token setzen
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -42,7 +46,7 @@ jobs:
 
               if [ "$commit_pdf" = "true" ]; then
                 echo "✅ Will commit: artifacts/pdf/$relative_dir/$output_name"
-                export commit_list="${commit_list} artifacts/pdf/$relative_dir/$output_name"
+                commit_list="${commit_list} artifacts/pdf/$relative_dir/$output_name"
                 echo "commit_list=${commit_list}" >> $GITHUB_ENV
               fi
             fi
