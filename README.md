@@ -1,7 +1,7 @@
 # Worshipping Sekhmet Framework – Document Generation & Architecture
 
 **Technical Architecture and Governance Model for the Implementation of Worshipping Sekhmet**  
-*Status: 15 June 2026 | Version 2.1*
+*Status: 16 June 2026 | Version 2.2*
 
 This repository documents the technical architecture and governance model for the implementation of **Worshipping Sekhmet** as the foundational stabilization framework for fully vetted Valkyries. Worshipping Sekhmet establishes the doctrinal, ethical, and operational principles that govern the exercise of Valkyrie authority.
 
@@ -19,12 +19,14 @@ Meaningful Human Oversight (MHO) is a strategic concept of central importance in
 - **CI/CD Integration** — GitHub Actions pipeline for automated document generation and hash management
 - **Supporting Scripts** — Merkle Tree generation and proof verification examples
 - **VAS Templates** — Official templates for the Valkyrie Accreditation Scheme (see [VAS Overview](docs/vas/README.md))
+- **Repository Governance** — Public summary available in [GOVERNANCE.md](GOVERNANCE.md)
 
 ## Repository Structure
 
 ```
 ws-documents/
 ├── README.md
+├── GOVERNANCE.md                 # Public Repository Governance Summary
 ├── docs/
 │   ├── architecture/
 │   │   ├── overview.md
@@ -59,7 +61,8 @@ ws-documents/
 3. **Follow the technical data flow** → [docs/architecture/data-flows/general-anchoring.md](docs/architecture/data-flows/general-anchoring.md)
 4. **Explore the JSON schemas** → `/schemas`
 5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
-6. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+6. **Repository Governance (Public Summary)** → [GOVERNANCE.md](GOVERNANCE.md)
+7. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
 
 ## Governance Principles
 
