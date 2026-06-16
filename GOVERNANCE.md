@@ -20,6 +20,8 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 - You may **not** use the material for commercial purposes.
 - You may **not** create derivative works.
 
+Licensing strategy and legal responsibility lie with the **VJA-ViC** (Valkyrie Judicial Authority), in coordination with the **VAA-ViC** (Valkyrie Accreditation Authority).
+
 ## Standards Alignment
 
 This governance framework supports the requirements of:
