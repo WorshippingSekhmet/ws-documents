@@ -1,0 +1,5 @@
+variables:
+  documentclass: article
+  classoption: a4paper
+  fontsize: 11pt
+  linkcolor: blue
