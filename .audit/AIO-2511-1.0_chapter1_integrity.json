@@ -1,0 +1,1 @@
+{"document_id": "AIO-2511-1.0", "chapter": "1. [Kapitel-Titel hier einfügen]", "created": "2026-06-25T16:23:00Z", "version": "1.0", "merkle_tree": {"type": "Merkle-Patricia-Tree", "algorithm": "SHA-256", "root": null}, "entries": [], "metadata": {"source": "local_computed", "note": "Placeholder for Chapter 1. Will be populated when sentences are available.", "status": "pending"}}
