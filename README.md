@@ -29,6 +29,7 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 - **Supporting Scripts** — Merkle Tree generation and proof verification examples
 - **VAS Templates** — Official templates for the Valkyrie Accreditation Scheme (see [VAS Overview](docs/vas/README.md))
 - **Repository Governance** — Public summary available in [GOVERNANCE.md](GOVERNANCE.md)
+- **Audit Integrity Proofs** — Cryptographic Merkle Tree proofs for document AIO-2511-1.0 → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
 
 ## Repository Structure
 
@@ -37,30 +38,32 @@ ws-documents/
 ├── README.md
 ├── GOVERNANCE.md                 # Public Repository Governance Summary
 ├── docs/
-│   ├── architecture/
-│   │   ├── overview.md
-│   │   ├── raci-matrix.md
-│   │   ├── mho-gateways.md
-│   │   └── data-flows/
-│   │       ├── general-anchoring.md
-│   │       └── pillar-examples/
-│   │           └── vha-anchoring.md
-│   ├── vas/
-│   │   ├── README.md                 # VAS Templates Overview
-│   │   └── templates/
-│   │       └── archive/
-│   ├── adr/                          # Architecture Decision Records
-│   └── rune-weaving/
-│       └── risk-appetite.md
+│   │   architecture/
+│   │   │   overview.md
+│   │   │   raci-matrix.md
+│   │   │   mho-gateways.md
+│   │   │   data-flows/
+│   │   │       general-anchoring.md
+│   │   │       pillar-examples/
+│   │   │           vha-anchoring.md
+│   │   vas/
+│   │   │   README.md                 # VAS Templates Overview
+│   │   │   templates/
+│   │   │       archive/
+│   │   adr/                          # Architecture Decision Records
+│   │   rune-weaving/
+│   │       risk-appetite.md
+│   integrity/                      # Cryptographic integrity proofs (AIO-2511-1.0)
+└   └   AIO-2511-1.0.md
 ├── schemas/
-│   ├── anchoring-batch.schema.json
-│   ├── merkle-proof.schema.json
-│   └── mho-log.schema.json
-├── scripts/
-│   ├── archive_template.sh
-│   └── build_merkle_tree.py
-└── verify_proof.py
-└── examples/
+│   │   anchoring-batch.schema.json
+│   │   merkle-proof.schema.json
+│   │   mho-log.schema.json
+└   scripts/
+│   │   archive_template.sh
+│   │   build_merkle_tree.py
+└   verify_proof.py
+└   examples/
 ```
 
 ## Quick Start
@@ -71,7 +74,8 @@ ws-documents/
 4. **Explore the JSON schemas** → `/schemas`
 5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
 6. **Repository Governance (Public Summary)** → [GOVERNANCE.md](GOVERNANCE.md)
-7. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+7. **Audit Integrity Proofs (AIO-2511-1.0)** → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
+8. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
 
 ## Governance Principles
 
