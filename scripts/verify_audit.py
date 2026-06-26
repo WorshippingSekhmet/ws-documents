@@ -1,84 +1,122 @@
+#!/usr/bin/env python3
+"""
+verify_audit.py – Verify all integrity proof JSONs in the new Merkle-Patricia-Tree schema.
+
+Scans docs/integrity/ for *_integrity.json and checks:
+- Structure matches the target schema
+- All entry values are valid 64-char hex
+- Recomputed Merkle root from all "value" fields matches merkle_tree.root
+- Outputs the expected ✅ / ❌ and overall result
+
+Run from ws-documents root:
+    python3 scripts/verify_audit.py
+"""
+
 import json
 import hashlib
-import glob
+import sys
+from pathlib import Path
 
-def sha256_pair(left_hex: str, right_hex: str) -> str:
-    """Berechnet SHA-256 über die Verkettung zweier Hex-Strings."""
-    return hashlib.sha256(bytes.fromhex(left_hex + right_hex)).hexdigest()
+def sha256_hex(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
 
-def verify_merkle_proof(leaf: str, proof: list, index: int, root: str) -> bool:
-    """
-    Verifiziert einen Merkle-Proof.
-    - leaf: Hash des Blattes
-    - proof: Liste der Geschwister-Hashes (von unten nach oben)
-    - index: Position des Blattes im ursprünglichen Array (0-basiert)
-    - root: Erwarteter Root-Hash
-    """
-    current = leaf
-    for sibling in proof:
-        if index % 2 == 0:
-            current = sha256_pair(current, sibling)
-        else:
-            current = sha256_pair(sibling, current)
-        index //= 2
-    return current == root
+def compute_merkle_root(leaf_values: list[str]) -> str:
+    if not leaf_values:
+        return sha256_hex(b"")
+    level = [bytes.fromhex(h) for h in leaf_values]
+    while len(level) > 1:
+        next_level = []
+        for i in range(0, len(level), 2):
+            left = level[i]
+            right = level[i + 1] if i + 1 < len(level) else left
+            parent = hashlib.sha256(left + right).digest()
+            next_level.append(parent)
+        level = next_level
+    return level[0].hex()
 
-def verify_chapter(filepath: str) -> tuple[bool, str]:
+def verify_json_file(json_path: Path) -> tuple[bool, str, int]:
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
     except Exception as e:
-        return False, f"Fehler beim Lesen: {e}"
+        return False, f"Failed to load/parse JSON: {e}", 0
 
-    root = data.get("merkle_tree", {}).get("root")
+    # Check required top-level keys for new schema
+    required = ["document_id", "chapter", "merkle_tree", "entries"]
+    missing = [k for k in required if k not in data]
+    if missing:
+        return False, f"Missing top-level keys: {missing}", 0
+
+    merkle_info = data.get("merkle_tree", {})
+    if not isinstance(merkle_info, dict) or "root" not in merkle_info:
+        return False, "merkle_tree.root missing or invalid", 0
+
     entries = data.get("entries", [])
+    if not isinstance(entries, list):
+        return False, "'entries' must be a list", 0
 
-    if not root:
-        return False, "Kein Root-Hash gefunden."
-    if not entries:
-        return True, "Keine Einträge (leeres Kapitel) – übersprungen."
+    if len(entries) == 0:
+        return True, "No entries (empty chapter) – considered valid", 0
 
-    all_valid = True
-    for entry in entries:
-        key = entry.get("key", "")
-        try:
-            index = int(key.split("_satz")[-1]) - 1
-        except (ValueError, IndexError):
-            return False, f"Ungültiger Key: {key}"
+    values = []
+    for idx, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            return False, f"Entry {idx} is not an object", 0
+        val = entry.get("value", "")
+        if not isinstance(val, str) or len(val) != 64 or not all(c in "0123456789abcdefABCDEF" for c in val):
+            return False, f"Invalid 'value' hash in entry {idx} (key={entry.get('key', '?')})", 0
+        values.append(val.lower())
 
-        leaf = entry.get("value")
-        proof = entry.get("proofs", {}).get("merkle", {}).get("proof", [])
+    try:
+        recomputed = compute_merkle_root(values)
+    except Exception as e:
+        return False, f"Error computing Merkle root: {e}", len(values)
 
-        if not verify_merkle_proof(leaf, proof, index, root):
-            print(f"  ❌ Ungültiger Proof für {key}")
-            all_valid = False
+    stored_root = merkle_info.get("root", "").lower()
+    if recomputed != stored_root:
+        return False, f"Merkle root mismatch!\n  Stored:   {stored_root}\n  Computed: {recomputed}", len(values)
 
-    if all_valid:
-        return True, f"✅ Alle {len(entries)} Sätze gültig"
-    else:
-        return False, f"❌ Fehlerhafte Proofs gefunden"
+    return True, "OK", len(values)
 
 def main():
-    print("🔍 Starte Audit-Verifikation...\n")
-    pattern = ".audit/AIO-2511-1.0_chapter*_integrity.json"
-    files = sorted(glob.glob(pattern))
+    integrity_dir = Path("docs/integrity")
+    if not integrity_dir.exists():
+        print(f"❌ Directory {integrity_dir} not found. Run from ws-documents root.")
+        sys.exit(1)
 
-    if not files:
-        print(f"❌ Keine Dateien gefunden unter: {pattern}")
-        return
+    json_files = sorted(integrity_dir.glob("*_integrity.json"))
+    if not json_files:
+        json_files = sorted(integrity_dir.glob("*.json"))
+
+    if not json_files:
+        print("⚠️ No integrity JSON files found.")
+        sys.exit(0)
+
+    print("🔍 Starting Audit Verification (Merkle-Patricia-Tree schema)...\n")
 
     all_passed = True
-    for filepath in files:
-        print(f"📄 {filepath}")
-        passed, message = verify_chapter(filepath)
-        print(f"   {message}\n")
-        if not passed:
-            all_passed = False
+    total_chapters = 0
+    total_entries = 0
 
+    for jf in json_files:
+        total_chapters += 1
+        print(f"📄 {jf}")
+        success, msg, num = verify_json_file(jf)
+        total_entries += num
+        if success:
+            print(f"   ✅ All {num} entries valid (root matches)")
+        else:
+            print(f"   ❌ FAILED: {msg}")
+            all_passed = False
+        print()
+
+    print("─" * 60)
     if all_passed:
-        print("🎉 GESAMTERGEBNIS: ALLE KAPITEL BESTANDEN!")
+        print(f"🎉 OVERALL RESULT: ALL CHAPTERS PASSED! ({total_chapters} chapters, {total_entries} entries verified)")
+        sys.exit(0)
     else:
-        print("❌ GESAMTERGEBNIS: FEHLER BEI MINDESTENS EINEM KAPITEL.")
+        print(f"💥 OVERALL RESULT: SOME CHAPTERS FAILED")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

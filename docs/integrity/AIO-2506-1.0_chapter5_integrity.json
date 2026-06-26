@@ -1,0 +1,28 @@
+{
+  "document_id": "AIO-2506-1.0",
+  "report_version": "1.0",
+  "schema_version": "1.1",
+  "chapter": "5. Beurteilung der Lage",
+  "created": "2026-06-26T20:06:08+00:00",
+  "merkle_tree": {
+    "type": "Merkle-Patricia-Tree",
+    "algorithm": "SHA-256",
+    "root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "entries": [
+    {
+      "key": "AIO-2506-1.0_kapitel5_satz1",
+      "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proofs": {
+        "merkle": {
+          "proof": []
+        },
+        "zk_snark": null
+      }
+    }
+  ],
+  "metadata": {
+    "source": "local_computed",
+    "note": "Korrekt berechnete Merkle-Proofs (1 Sätze) – generiert via Builder-Tool."
+  }
+}

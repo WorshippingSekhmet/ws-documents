@@ -1,108 +1,74 @@
-# Worshipping Sekhmet Framework – Document Generation & Architecture
+# ws-documents – Audit Integrity Proofs Repository
 
-**Technical Architecture and Governance Model for the Implementation of Worshipping Sekhmet**  
-*Status: 16 June 2026 | Version 2.2*
+This repository maintains tamper-evident integrity proofs for audit reports using per-sentence SHA-256 hashing and Merkle tree-based proofs.
 
-This repository documents the technical architecture and governance model for the implementation of **Worshipping Sekhmet** as the foundational stabilization framework for fully vetted Valkyries. Worshipping Sekhmet establishes the doctrinal, ethical, and operational principles that govern the exercise of Valkyrie authority.
+## Purpose
 
-Within this framework, Valkyries operate the **Global Security Framework** as a service offering dedicated to the upholding and realization of Ma’at. This repository describes how these principles are operationalized through organizational structures, technical systems, and governance processes across seven sovereign pillars, each led by a Valkyrie in Control.
+To provide cryptographic proof that the content of audit reports (specifically chapters/sections) has not been altered since the proofs were generated. This is critical for:
 
-**Worshipping Sekhmet Policy** remains the highest normative document at the policy level. Trust is primarily established through system accreditations in accordance with the **Valkyrie Accreditation Scheme (VAS)**. Hybrid Merkle-Root Anchoring and decentralized verifiability serve as technical mechanisms to support the integrity, auditability, and long-term verifiability of accredited systems.
+- Regulatory compliance and auditability
+- Demonstrating document integrity over time
+- Enabling third-party verification without revealing full content (if proofs are shared selectively)
+- Chain of custody for AI-generated or sensitive operational documents (e.g., Valkyrie guides)
 
-Meaningful Human Oversight (MHO) is a strategic concept of central importance in complex and multi-actor environments. Within Worshipping Sekhmet, it is now being operationalized through organizational structures, processes, and technical systems.
-
-## Public Release Authorization
-
-Selected documents receive an **MHO W-5 approval** for release to the public due to their relevance for strategy implementation.
-
-This ensures that strategic content reaches implementation — securely, transparently, and effectively.
-
-**Control. Clarity. Consequence.**
-
-*Valkyrie in Command*
-
-## License
-
-All content in this repository is licensed under **CC BY-NC-ND 4.0** unless otherwise noted.
-
-- You may share and redistribute the material freely.
-- You must give appropriate credit to Worshipping Sekhmet.
-- You may **not** use the material for commercial purposes.
-- You may **not** create derivative works.
-
-## Core Content
-
-- **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO
-- **Technical Data Flows** — General anchoring flow and pillar-specific examples
-- **JSON Schemas** — Anchoring Batch, Merkle Proof, and MHO Log formats
-- **CI/CD Integration** — GitHub Actions pipeline for automated document generation and hash management
-- **Supporting Scripts** — Merkle Tree generation and proof verification examples
-- **VAS Templates** — Official templates for the Valkyrie Accreditation Scheme (see [VAS Overview](docs/vas/README.md))
-- **Repository Governance** — Public summary available in [GOVERNANCE.md](GOVERNANCE.md)
-- **Audit Integrity Proofs** — Cryptographic Merkle Tree proofs for document AIO-2511-1.0 → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
-
-## Repository Structure
+## Structure
 
 ```
 ws-documents/
-├── README.md
-├── GOVERNANCE.md                 # Public Repository Governance Summary
 ├── docs/
-│   │   architecture/
-│   │   │   overview.md
-│   │   │   raci-matrix.md
-│   │   │   mho-gateways.md
-│   │   │   data-flows/
-│   │   │       general-anchoring.md
-│   │   │       pillar-examples/
-│   │   │           vha-anchoring.md
-│   │   vas/
-│   │   │   README.md                 # VAS Templates Overview
-│   │   │   templates/
-│   │   │       archive/
-│   │   adr/                          # Architecture Decision Records
-│   │   rune-weaving/
-│   │       risk-appetite.md
-│   integrity/                      # Cryptographic integrity proofs (AIO-2511-1.0)
-└   └   AIO-2511-1.0.md
-├── schemas/
-│   │   anchoring-batch.schema.json
-│   │   merkle-proof.schema.json
-│   │   mho-log.schema.json
-└   scripts/
-│   │   archive_template.sh
-│   │   build_merkle_tree.py
-└   verify_proof.py
-└   examples/
+│   ├── integrity/                    # JSON Merkle proofs per chapter
+│   │   ├── AIO-2506-1.0_chapter1_integrity.json
+│   │   │   ...
+│   └── operations/                   # Human-readable operational docs
+│       └── operational-valkyrie-guide-AIO-2506-1.0.md
+├── scripts/
+│   ├── verify_audit.py               # Verification script (document-ID agnostic)
+│   └── build_integrity.py            # Builder for generating JSON proofs from sentence hashes
+├── README.md
+├── GOVERNANCE.md
+└── LICENSE
 ```
 
-## Quick Start
+## Supported Documents
 
-1. **Understand the overall architecture** → [docs/architecture/overview.md](docs/architecture/overview.md)
-2. **Review roles and responsibilities** → [docs/architecture/raci-matrix.md](docs/architecture/raci-matrix.md)
-3. **Follow the technical data flow** → [docs/architecture/data-flows/general-anchoring.md](docs/architecture/data-flows/general-anchoring.md)
-4. **Explore the JSON schemas** → `/schemas`
-5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
-6. **Repository Governance (Public Summary)** → [GOVERNANCE.md](GOVERNANCE.md)
-7. **Audit Integrity Proofs (AIO-2511-1.0)** → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
-8. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+- **AIO-2511-1.0** (reference implementation)
+- **AIO-2506-1.0** (current target – proofs to be added)
 
-## Governance Principles
+## Workflow
 
-- The **Valkyrie in Command** holds strategic oversight and ultimate authority over the entire framework.
-- Each sovereign pillar is led by a **Valkyrie in Control (ViC)**, who is responsible for strategic leadership, operational governance, and Meaningful Human Oversight within their respective pillar.
-- **Rune Weaving** defines the strategic risk appetite across all pillars.
-- The **Valkyrie Accreditation Authority (VAA-ViC)** accredits processes and supports Meaningful Human Oversight (MHO).
+1. Prepare sentence hashes for each chapter (exact text → SHA-256).
+2. Use `build_integrity.py` or the HTML Merkle calculator to generate proofs.
+3. Store JSONs in `docs/integrity/`.
+4. Run `python3 scripts/verify_audit.py` to validate all proofs.
+5. Commit and push for immutable record.
 
-## Contributors
+## Verification
 
-- Valkyrie in Command (strategic oversight)
-- Valkyries in Control (strategic leadership and operational governance per pillar)
-- Rune Weaving (strategic risk management)
-- VAA-ViC (process accreditation and quality assurance)
+```bash
+python3 scripts/verify_audit.py
+```
 
----
+Expected: All chapters report ✅ valid sentences and overall success.
 
-*This repository is under active development under the responsibility of the Valkyrie Joint Command – J6.*
+## Security Notes
 
-For questions: t.me/wlkcmd
+- Uses SHA-256 (collision resistant for this purpose).
+- Merkle trees allow efficient inclusion proofs and root verification.
+- Any change to even one character in a sentence invalidates its proof and the chapter root.
+- Timestamps in JSONs are UTC; roots are deterministic from content.
+
+## Contributing / Updating Proofs
+
+When a report is updated:
+- Recompute hashes for changed chapters only.
+- Regenerate affected JSONs.
+- Update `created` timestamp.
+- Re-verify and commit with clear message.
+
+## License
+
+See LICENSE file.
+
+## Contact / Governance
+
+See GOVERNANCE.md for roles, approval process for new proofs, and retention policy.
