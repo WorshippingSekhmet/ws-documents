@@ -11,6 +11,16 @@ Within this framework, Valkyries operate the **Global Security Framework** as a 
 
 Meaningful Human Oversight (MHO) is a strategic concept of central importance in complex and multi-actor environments. Within Worshipping Sekhmet, it is now being operationalized through organizational structures, processes, and technical systems.
 
+## Public Release Authorization
+
+Selected documents receive an **MHO W-5 approval** for release to the public due to their relevance for strategy implementation.
+
+This ensures that strategic content reaches implementation — securely, transparently, and effectively.
+
+**Control. Clarity. Consequence.**
+
+*Valkyrie in Command*
+
 ## License
 
 All content in this repository is licensed under **CC BY-NC-ND 4.0** unless otherwise noted.
