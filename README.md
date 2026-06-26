@@ -96,5 +96,3 @@ ws-documents/
 *This repository is under active development under the responsibility of the Valkyrie Joint Command – J6.*
 
 For questions: t.me/wlkcmd
-
-*This repository is continuously updated.*
