@@ -1,74 +1,40 @@
-# ws-documents – Audit Integrity Proofs Repository
+# ws-documents
 
-This repository maintains tamper-evident integrity proofs for audit reports using per-sentence SHA-256 hashing and Merkle tree-based proofs.
+Zentrale Sammlung kryptographischer **Integritäts-Proofs** für Audit-Berichte der AIO-Serie.
 
-## Purpose
+## Integrity Proofs
 
-To provide cryptographic proof that the content of audit reports (specifically chapters/sections) has not been altered since the proofs were generated. This is critical for:
+Hier werden für jeden Audit-Bericht die Integritäts-Proofs (Merkle-Patricia-Tree Schema) hinterlegt. 
+Zukünftige Berichte können einfach ergänzt werden, ohne das Haupt-README zu überladen.
 
-- Regulatory compliance and auditability
-- Demonstrating document integrity over time
-- Enabling third-party verification without revealing full content (if proofs are shared selectively)
-- Chain of custody for AI-generated or sensitive operational documents (e.g., Valkyrie guides)
+### Verfügbare Berichte
 
-## Structure
+| Bericht       | Link                                      | Status      | Beschreibung                     |
+|---------------|-------------------------------------------|-------------|----------------------------------|
+| AIO-2506-1.0 | [ws-documents/](ws-documents/)           | Templates   | Aktueller Bericht (8 Kapitel)   |
+| AIO-2511-1.0 | [ws-documents/](ws-documents/)           | Referenz    | Referenz-Implementierung        |
+
+> **Hinweis:** Die detaillierte Struktur, Skripte und Proof-JSONs befinden sich im Unterordner `ws-documents/`.
+
+## Struktur des Repositories
 
 ```
 ws-documents/
-├── docs/
-│   ├── integrity/                    # JSON Merkle proofs per chapter
-│   │   ├── AIO-2506-1.0_chapter1_integrity.json
-│   │   │   ...
-│   └── operations/                   # Human-readable operational docs
-│       └── operational-valkyrie-guide-AIO-2506-1.0.md
-├── scripts/
-│   ├── verify_audit.py               # Verification script (document-ID agnostic)
-│   └── build_integrity.py            # Builder for generating JSON proofs from sentence hashes
-├── README.md
+├── README.md                     ← Detaillierte Projektbeschreibung
 ├── GOVERNANCE.md
-└── LICENSE
+├── docs/
+│   ├── integrity/               ← JSON-Proofs pro Kapitel
+│   └── operations/
+├── scripts/
+│   ├── build_integrity.py
+│   └── verify_audit.py
+└── ...
 ```
 
-## Supported Documents
+## Nächste Schritte
 
-- **AIO-2511-1.0** (reference implementation)
-- **AIO-2506-1.0** (current target – proofs to be added)
+- Weitere AIO-Berichte werden hier ergänzt
+- Echte Satz-Texte/Hashes für AIO-2506-1.0 einspielen
+- Bei Bedarf individuelle Merkle-Proofs pro Satz erweitern
 
-## Workflow
-
-1. Prepare sentence hashes for each chapter (exact text → SHA-256).
-2. Use `build_integrity.py` or the HTML Merkle calculator to generate proofs.
-3. Store JSONs in `docs/integrity/`.
-4. Run `python3 scripts/verify_audit.py` to validate all proofs.
-5. Commit and push for immutable record.
-
-## Verification
-
-```bash
-python3 scripts/verify_audit.py
-```
-
-Expected: All chapters report ✅ valid sentences and overall success.
-
-## Security Notes
-
-- Uses SHA-256 (collision resistant for this purpose).
-- Merkle trees allow efficient inclusion proofs and root verification.
-- Any change to even one character in a sentence invalidates its proof and the chapter root.
-- Timestamps in JSONs are UTC; roots are deterministic from content.
-
-## Contributing / Updating Proofs
-
-When a report is updated:
-- Recompute hashes for changed chapters only.
-- Regenerate affected JSONs.
-- Update `created` timestamp.
-- Re-verify and commit with clear message.
-
-## License
-
-See LICENSE file.
-
-## Contact / Governance
-
-See GOVERNANCE.md for roles, approval process for new proofs, and retention policy.
+Siehe [ws-documents/README.md](ws-documents/README.md) für die vollständige technische Dokumentation und den Workflow.
