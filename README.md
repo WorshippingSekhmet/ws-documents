@@ -15,8 +15,8 @@ Within this framework, Valkyries operate the **Global Security Framework** as a 
 ```
 ws-documents/
 ├── integrity/
-│   ├── AIO-2511-1.0.md
-│   └── AIO-2506-1.0/          # 8 Kapitel-Proofs (JSON)
+│   └── AIO-2511-1.0.md
+├── docs/integrity/           # AIO-2506-1.0 (8 Kapitel-Proofs) + weitere
 ├── schemas/
 ├── scripts/
 ├── adr/
@@ -29,6 +29,6 @@ ws-documents/
 Kryptographische Integritäts-Proofs für die AIO-Audit-Berichte.
 
 - [AIO-2506-1.0 – Alle 8 Kapitel-Proofs](docs/integrity/)
-- [AIO-2511-1.0](integrity/AIO-2511-1.0.md)
+- [AIO-2511-1.0](docs/integrity/AIO-2511-1.0.md)
 
 Weitere Berichte werden hier ergänzt.
