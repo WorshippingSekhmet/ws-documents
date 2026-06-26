@@ -46,7 +46,7 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 ```
 ws-documents/
 ├── README.md
-├── GOVERNANCE.md                 # Public Repository Governance Summary
+├── GOVERNANCE.md
 ├── docs/
 │   ├── architecture/
 │   │   ├── overview.md
@@ -57,15 +57,15 @@ ws-documents/
 │   │       pillar-examples/
 │   │           vha-anchoring.md
 │   vas/
-│   │   README.md                 # VAS Templates Overview
+│   │   README.md
 │   │   templates/
 │   │       archive/
-│   adr/                          # Architecture Decision Records
+│   adr/
 │   rune-weaving/
 │       risk-appetite.md
 │   integrity/                      # Cryptographic integrity proofs
 │   ├── AIO-2511-1.0.md
-│   └── AIO-2506-1.0/          # 8 chapter JSON proofs (in docs/integrity/)
+│   └── AIO-2506-1.0/          # 8 chapter JSON proofs
 ├── schemas/
 │   ├── anchoring-batch.schema.json
 │   ├── merkle-proof.schema.json
