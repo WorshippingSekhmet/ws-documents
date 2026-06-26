@@ -10,15 +10,25 @@ Within this framework, Valkyries operate the **Global Security Framework** as a 
 
 ---
 
-## Integrity Proofs
+## Repository Structure
 
-Kryptographische Integritäts-Proofs (Merkle-Patricia-Tree) für die Audit-Berichte der AIO-Serie.
+```
+ws-documents/
+├── integrity/
+│   ├── AIO-2511-1.0.md
+│   └── AIO-2506-1.0/          # 8 Kapitel-Proofs (JSON)
+├── schemas/
+├── scripts/
+├── adr/
+├── vas/
+└── ...
+```
 
-Die vollständigen Proofs inklusive aller Kapitel-JSONs, Skripte (`build_integrity.py`, `verify_audit.py`) und Governance für **AIO-2506-1.0** (8 Kapitel) sowie die Referenz AIO-2511-1.0 befinden sich hier im Repository.
+## Integrity Proofs (Core Content)
 
-**Direkter Einstieg:**
-- [docs/integrity/](docs/integrity/) – Alle Proof-JSONs
-- [AIO-2506-1.0 Kapitel 1](docs/integrity/AIO-2506-1.0_chapter1_integrity.json)
-- Weitere Kapitel siehe Ordner `docs/integrity/`
+Kryptographische Integritäts-Proofs für die AIO-Audit-Berichte.
 
-> Weitere AIO-Berichte können hier ergänzt werden.
+- [AIO-2506-1.0 – Alle 8 Kapitel-Proofs](docs/integrity/)
+- [AIO-2511-1.0](integrity/AIO-2511-1.0.md)
+
+Weitere Berichte werden hier ergänzt.
