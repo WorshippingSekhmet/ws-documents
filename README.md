@@ -39,7 +39,7 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 - **Supporting Scripts** — Merkle Tree generation and proof verification examples
 - **VAS Templates** — Official templates for the Valkyrie Accreditation Scheme (see [VAS Overview](docs/vas/README.md))
 - **Repository Governance** — Public summary available in [GOVERNANCE.md](GOVERNANCE.md)
-- **Audit Integrity Proofs** — Cryptographic Merkle Tree proofs for document AIO-2511-1.0 → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
+- **Audit Integrity Proofs** — Cryptographic Merkle Tree proofs for AIO-2511-1.0 and AIO-2506-1.0
 
 ## Repository Structure
 
@@ -63,8 +63,9 @@ ws-documents/
 │   adr/                          # Architecture Decision Records
 │   rune-weaving/
 │       risk-appetite.md
-│   integrity/                      # Cryptographic integrity proofs (AIO-2511-1.0)
-│   └── AIO-2511-1.0.md
+│   integrity/                      # Cryptographic integrity proofs
+│   ├── AIO-2511-1.0.md
+│   └── AIO-2506-1.0/          # 8 chapter JSON proofs (in docs/integrity/)
 ├── schemas/
 │   ├── anchoring-batch.schema.json
 │   ├── merkle-proof.schema.json
@@ -85,7 +86,8 @@ ws-documents/
 5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
 6. **Repository Governance (Public Summary)** → [GOVERNANCE.md](GOVERNANCE.md)
 7. **Audit Integrity Proofs (AIO-2511-1.0)** → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
-8. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
+8. **Audit Integrity Proofs (AIO-2506-1.0)** → [docs/integrity/](docs/integrity/)
+9. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
 
 ## Governance Principles
 
