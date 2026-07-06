@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ==============================================================================
+# Worshipping Sekhmet Framework - Generator Script
+# Licensed under CC BY-NC-ND 4.0 (Creative Commons)
+# 
+# HINWEIS / PURPOSE:
+# Dieses Skript dient ausschließlich der autorisierten, reproduzierbaren 
+# Generierung der offiziellen Framework-Dokumente. Es ist kein freies 
+# Software-Werkzeug zur Modifikation oder Abspaltung (NoDerivatives).
+# Details siehe Haupt-README des Repositories.
+# ==============================================================================
 """
 WS-ViC-001 – Worshipping Sekhmet Policy (Version 1.0)
 Immutable Core Principles
