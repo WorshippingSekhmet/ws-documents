@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ==============================================================================
+# Worshipping Sekhmet Framework - Generator Script
+# Licensed under CC BY-NC-ND 4.0 (Creative Commons)
+# 
+# HINWEIS / PURPOSE:
+# Dieses Skript dient ausschließlich der autorisierten, reproduzierbaren 
+# Generierung der offiziellen Framework-Dokumente. Es ist kein freies 
+# Software-Werkzeug zur Modifikation oder Abspaltung (NoDerivatives).
+# Details siehe Haupt-README des Repositories.
+# ==============================================================================
 """
 WS-Framework-Charter v1.0
 Black/White/Gold formal style.
@@ -49,13 +60,13 @@ def build_pdf():
 
     story.append(Paragraph("2. Sovereign Pillars", styles['SectionHead']))
     story.append(Paragraph("The Framework consists of seven sovereign pillars under the Valkyrie in Command:", styles['BodyJust']))
-    story.append(Paragraph(• Valkyrie Diplomatic Corps", styles['Bullet']))
-    story.append(Paragraph(• Valkyrie Judicial Authority", styles['Bullet']))
-    story.append(Paragraph(• Valkyrie Joint Command (CJADC2 capable)", styles['Bullet']))
-    story.append(Paragraph(• Valkyrie Accreditation Authority (VAA)", styles['Bullet']))
-    story.append(Paragraph(• Valkyrie Monetary Authority (VMA)", styles['Bullet']))
-    story.append(Paragraph(• Rune Weaving (Strategic Risk Management)", styles['Bullet']))
-    story.append(Paragraph(• Valkyrie Health Authority (VHA) – planned", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Diplomatic Corps", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Judicial Authority", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Joint Command (CJADC2 capable)", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Accreditation Authority (VAA)", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Monetary Authority (VMA)", styles['Bullet']))
+    story.append(Paragraph("• Rune Weaving (Strategic Risk Management)", styles['Bullet']))
+    story.append(Paragraph("• Valkyrie Health Authority (VHA) – planned", styles['Bullet']))
 
     story.append(Paragraph("3. Valkyrie in Control (ViC)", styles['SectionHead']))
     story.append(Paragraph("Each sovereign pillar is led by a Valkyrie in Control (ViC), who holds full accountability for their domain.", styles['BodyJust']))
