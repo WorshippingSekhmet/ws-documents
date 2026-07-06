@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ==============================================================================
+# Worshipping Sekhmet Framework - Generator Script
+# Licensed under CC BY-NC-ND 4.0 (Creative Commons)
+# 
+# HINWEIS / PURPOSE:
+# Dieses Skript dient ausschließlich der autorisierten, reproduzierbaren 
+# Generierung der offiziellen Framework-Dokumente. Es ist kein freies 
+# Software-Werkzeug zur Modifikation oder Abspaltung (NoDerivatives).
+# Details siehe Haupt-README des Repositories.
+# ==============================================================================
 """
 VAS v8.7 – Valkyrie Accreditation Scheme
 Black/White/Gold formal style.
@@ -50,9 +61,9 @@ def build_pdf():
 
     story.append(Paragraph("13. Normative References", styles['SectionHead']))
     story.append(Paragraph("The following documents form the binding normative basis for VAS:", styles['BodyJust']))
-    story.append(Paragraph(• WS-ViC-001 (Immutable Core Principles) – highest precedence", styles['Bullet']))
-    story.append(Paragraph(• WS-Framework-Charter – overarching framework", styles['Bullet']))
-    story.append(Paragraph(• VAS v8.7 (this document)", styles['Bullet']))
+    story.append(Paragraph("• WS-ViC-001 (Immutable Core Principles) – highest precedence", styles['Bullet']))
+    story.append(Paragraph("• WS-Framework-Charter – overarching framework", styles['Bullet']))
+    story.append(Paragraph("• VAS v8.7 (this document)", styles['Bullet']))
 
     story.append(Paragraph("In case of conflict, the order of precedence is: WS-ViC-001 → WS-Framework-Charter → VAS v8.7.", styles['BodyJust']))
 
@@ -60,9 +71,9 @@ def build_pdf():
     story.append(Paragraph("VAS v8.7 is subordinate to WS-ViC-001. The VAA-ViC holds sole accountability for VAS.", styles['BodyJust']))
 
     story.append(Paragraph("15. Version History", styles['SectionHead']))
-    story.append(Paragraph(• v8.5 (6 June 2026) – Original release as “Valkyrie Audit Scheme”.", styles['Bullet']))
-    story.append(Paragraph(• v8.6 (14 June 2026) – Renamed to Accreditation Scheme, strengthened VAA-ViC accountability.", styles['Bullet']))
-    story.append(Paragraph(• v8.7 (14 June 2026) – Added Section 13 (Normative References) with auditable hashes.", styles['Bullet']))
+    story.append(Paragraph("• v8.5 (6 June 2026) – Original release as “Valkyrie Audit Scheme”.", styles['Bullet']))
+    story.append(Paragraph("• v8.6 (14 June 2026) – Renamed to Accreditation Scheme, strengthened VAA-ViC accountability.", styles['Bullet']))
+    story.append(Paragraph("• v8.7 (14 June 2026) – Added Section 13 (Normative References) with auditable hashes.", styles['Bullet']))
 
     story.append(Spacer(1, 6*mm))
     story.append(Paragraph("— End of VAS v8.7 —", styles['DocSubtitle']))
