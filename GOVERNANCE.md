@@ -22,6 +22,10 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 
 Licensing strategy and legal responsibility lie with the **VJA-ViC** (Valkyrie Judicial Authority), in coordination with the **VAA-ViC** (Valkyrie Accreditation Authority).
 
+## Document Generation Tooling
+
+The official documents of the Worshipping Sekhmet Framework are generated using the Python scripts located in the `/docs` directory. These scripts are an integral part of the normative publication process and are subject to the same CC BY-NC-ND 4.0 license as all other repository content. They are maintained exclusively by the Framework's authorized bodies and must not be modified, forked, or redistributed independently.
+
 ## Standards Alignment
 
 This governance framework supports the requirements of:
