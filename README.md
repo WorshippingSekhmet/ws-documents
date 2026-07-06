@@ -38,6 +38,14 @@ Sie sind kein eigenständiges Softwareprodukt und nicht für eine unabhängige W
 
 Eine Nutzung der Skripte außerhalb des hier definierten Zwecks (z. B. eigenständige Weiterentwicklung oder Einbettung in andere Systeme) ist durch die Lizenz untersagt.
 
+### Purpose of the Python Scripts (English)
+
+The Python scripts contained in this repository (`docs/generate_*.py` and associated helper scripts) exist solely for the formalized, reproducible generation of the official Worshipping Sekhmet Framework documents in accordance with the normative requirements of the Charter, the Governance structures, and the Valkyrie Accreditation Scheme (VAS).
+
+They are not an independent software product and are not intended for standalone further development, forking, or commercial use. The licensing of the entire repository under CC BY-NC-ND 4.0 applies uniformly to all content – including the scripts. This ensures that the generation of official documents remains strictly bound to the authorized normative texts, preventing the creation of divergent or unofficial versions.
+
+Any use of the scripts outside of the defined purpose (e.g., independent further development or integration into third-party systems) is prohibited by the license.
+
 ## Core Content
 
 - **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO
