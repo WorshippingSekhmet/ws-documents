@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ==============================================================================
+# Worshipping Sekhmet Framework - Generator Script
+# Licensed under CC BY-NC-ND 4.0 (Creative Commons)
+# 
+# HINWEIS / PURPOSE:
+# Dieses Skript dient ausschließlich der autorisierten, reproduzierbaren 
+# Generierung der offiziellen Framework-Dokumente. Es ist kein freies 
+# Software-Werkzeug zur Modifikation oder Abspaltung (NoDerivatives).
+# Details siehe Haupt-README des Repositories.
+# ==============================================================================
 """
 Central orchestrator for all WS Framework documents.
 All generator scripts must follow the same template structure.
