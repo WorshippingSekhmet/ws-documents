@@ -30,6 +30,14 @@ All content in this repository is licensed under **CC BY-NC-ND 4.0** unless othe
 - You may **not** use the material for commercial purposes.
 - You may **not** create derivative works.
 
+### Zweck und Lizenzierung der Python-Skripte
+
+Die im Repository enthaltenen Python-Skripte (`docs/generate_*.py` sowie zugehörige Hilfsskripte) dienen ausschließlich der formalisierten, reproduzierbaren Generierung der offiziellen Dokumente des Worshipping Sekhmet Frameworks gemäß den normativen Vorgaben der Charta, der Governance-Strukturen und der Valkyrie Accreditation Scheme (VAS).
+
+Sie sind kein eigenständiges Softwareprodukt und nicht für eine unabhängige Weiterentwicklung, Abspaltung oder kommerzielle Nutzung vorgesehen. Die Lizenzierung des gesamten Repositories unter CC BY-NC-ND 4.0 gilt einheitlich für alle Inhalte – einschließlich der Skripte. Dies stellt sicher, dass die Generierung der offiziellen Dokumente strikt an die autorisierten normativen Texte gebunden bleibt und keine abweichenden oder inoffiziellen Versionen entstehen können.
+
+Eine Nutzung der Skripte außerhalb des hier definierten Zwecks (z. B. eigenständige Weiterentwicklung oder Einbettung in andere Systeme) ist durch die Lizenz untersagt.
+
 ## Core Content
 
 - **Architecture Overview** — Seven sovereign pillars, layered model, RACI matrix, and MHO
