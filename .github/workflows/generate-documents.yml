@@ -1,3 +1,10 @@
+# ==============================================================================
+# AUTOMATED DOCUMENT GENERATION
+# This workflow executes the authorized generator scripts to produce the
+# official framework documents. The scripts and their outputs are subject to
+# CC BY-NC-ND 4.0. Do not modify or repurpose this workflow independently.
+# ==============================================================================
+
 name: Generate WS Documents
 
 on:
