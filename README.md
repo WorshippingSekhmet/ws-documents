@@ -57,6 +57,10 @@ Any use of the scripts outside of the defined purpose (e.g., independent further
 - **Repository Governance** — Public summary available in [GOVERNANCE.md](GOVERNANCE.md)
 - **Audit Integrity Proofs** — Cryptographic Merkle Tree proofs for document AIO-2511-1.0 → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
 
+## Quick Start
+
+Die aktuellen offiziellen Dokumente des Frameworks (Charta, Governance, VAS) sind direkt im Repository als Markdown und/oder PDF verfügbar. Sie werden automatisch durch autorisierte interne Toolchains generiert und gepflegt. Eine eigenständige Ausführung der Generator-Skripte ist nicht vorgesehen.
+
 ## Repository Structure
 
 ```
@@ -91,17 +95,6 @@ ws-documents/
 └   verify_proof.py
 └   examples/
 ```
-
-## Quick Start
-
-1. **Understand the overall architecture** → [docs/architecture/overview.md](docs/architecture/overview.md)
-2. **Review roles and responsibilities** → [docs/architecture/raci-matrix.md](docs/architecture/raci-matrix.md)
-3. **Follow the technical data flow** → [docs/architecture/data-flows/general-anchoring.md](docs/architecture/data-flows/general-anchoring.md)
-4. **Explore the JSON schemas** → `/schemas`
-5. **VAS Templates** → [docs/vas/README.md](docs/vas/README.md)
-6. **Repository Governance (Public Summary)** → [GOVERNANCE.md](GOVERNANCE.md)
-7. **Audit Integrity Proofs (AIO-2511-1.0)** → [docs/integrity/AIO-2511-1.0.md](docs/integrity/AIO-2511-1.0.md)
-8. **Test Merkle Tree generation locally** → `python scripts/build_merkle_tree.py`
 
 ## Governance Principles
 
